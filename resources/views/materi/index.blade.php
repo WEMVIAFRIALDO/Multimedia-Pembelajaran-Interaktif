@@ -4,13 +4,13 @@
 <div class="min-h-screen py-8 md:py-12 bg-slate-950">
     <div class="container max-w-7xl mx-auto px-4 md:px-8">
         <!-- Header -->
-        <div class="mb-8 md:mb-12">
+        <div class="mb-8 md:mb-12 glass-card bg-slate-900/40 border-slate-700/40 shadow-2xl p-8 md:p-10">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                 <div>
                     <p class="text-amber-400 text-sm font-semibold uppercase tracking-wide mb-2">📚 Pembelajaran</p>
                     <h1 class="text-3xl md:text-4xl font-bold text-slate-100">Pilih Materi Pembelajaran</h1>
                 </div>
-                <div class="mt-4 md:mt-0 px-4 py-2 bg-slate-800/80 border border-slate-700 rounded-lg">
+                <div class="mt-4 md:mt-0 px-4 py-2 bg-slate-800/70 border border-slate-600/60 rounded-xl shadow-sm">
                     <p class="text-blue-200 text-sm font-semibold">
                         😊 Mood Anda: <span class="text-white font-bold">{{ $selectedMood }}</span>
                     </p>

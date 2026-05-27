@@ -5,7 +5,7 @@ namespace App\Providers;
 use App\Models\Mood;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\URL; // <-- Tambahan wajib untuk Vercel
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,11 +17,9 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        // --- SUNTIKAN HTTPS UNTUK VERCEL ---
-        if (env('APP_ENV') !== 'local') {
+        if ($this->app->environment('production')) {
             URL::forceScheme('https');
         }
-        // -----------------------------------
 
         View::composer('layouts.app', function ($view) {
             $currentMood = null;

@@ -12,52 +12,44 @@
 <div class="mood-page" role="main">
   <div class="mood-page__bg" aria-hidden="true"></div>
 
-  <header class="mood-header">
-    <p class="kicker">PILIH MOOD KAMU HARI INI</p>
-    <h1 class="title">Pilih Mood Kamu Hari Ini</h1>
-    <p class="subtitle">Pilih suasana belajar yang paling cocok untukmu hari ini. Setiap mood menghadirkan pengalaman pembelajaran adaptif dengan nuansa visual yang berbeda.</p>
+  <header class="mood-header text-center mb-8">
+    <p class="kicker text-blue-400 font-semibold tracking-wide">PILIH MOOD KAMU HARI INI</p>
+    <h1 class="title text-4xl font-bold text-white mt-2">Pilih Mood Kamu Hari Ini</h1>
+    <p class="subtitle text-gray-300 mt-3 max-w-2xl mx-auto">Pilih suasana belajar yang paling cocok untukmu hari ini. Setiap mood menghadirkan pengalaman pembelajaran adaptif dengan nuansa visual yang berbeda.</p>
   </header>
 
-  <section class="mood-grid" aria-label="Pemilihan mood">
-    <!-- Fokus Card -->
-    <button class="mood-card mood-card--fokus" data-mood="fokus" data-bg="radial-gradient(circle at top, rgba(255,230,205,0.55), transparent 55%)" data-border="#f59e0b" data-text="#111827" aria-pressed="false">
-      <div class="mood-card__art mood-card__art--fokus">
-        <!-- Image: user dapat upload ke public/images/mood/fokus.png -->
-        <img src="<?php echo e(asset('images/mood/fokus.png')); ?>" alt="Fokus mood illustration" class="mood-card__image" onerror="this.style.display='none'">
-        <!-- Fallback CSS art jika image tidak ada -->
+  <section class="mood-grid grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-stretch items-center mt-8 px-4" aria-label="Pemilihan mood">
+    
+    <button class="mood-card mood-card--fokus relative rounded-2xl overflow-hidden transition-transform hover:scale-105" data-mood="fokus" data-bg="radial-gradient(circle at top, rgba(255,230,205,0.55), transparent 55%)" data-border="#f59e0b" data-text="#111827" aria-pressed="false">
+      <div class="mood-card__art mood-card__art--fokus w-full">
+        <img src="<?php echo e(asset('images/mood/fokus.png')); ?>" alt="Fokus mood illustration" class="mood-card__image w-full h-full object-cover" onerror="this.style.display='none'">
         <div class="art-glass-panel"></div>
         <div class="art-stack"></div>
         <div class="art-bulb"></div>
         <div class="art-glow"></div>
       </div>
-      <div>
-        <div class="mood-card__label">Fokus</div>
+      <div class="py-4 text-center bg-slate-900 border-t border-amber-500">
+        <div class="mood-card__label text-xl font-bold text-white">Fokus</div>
       </div>
     </button>
 
-    <!-- Santai Card -->
-    <button class="mood-card mood-card--santai" data-mood="santai" data-bg="radial-gradient(circle at top, rgba(219,234,254,0.55), transparent 55%)" data-border="#0ea5e9" data-text="#0f172a" aria-pressed="false">
-      <div class="mood-card__art mood-card__art--santai">
-        <!-- Image: user dapat upload ke public/images/mood/santai.png -->
-        <img src="<?php echo e(asset('images/mood/santai.png')); ?>" alt="Santai mood illustration" class="mood-card__image" onerror="this.style.display='none'">
-        <!-- Fallback CSS art jika image tidak ada -->
+    <button class="mood-card mood-card--santai relative rounded-2xl overflow-hidden transition-transform hover:scale-105" data-mood="santai" data-bg="radial-gradient(circle at top, rgba(219,234,254,0.55), transparent 55%)" data-border="#0ea5e9" data-text="#0f172a" aria-pressed="false">
+      <div class="mood-card__art mood-card__art--santai w-full">
+        <img src="<?php echo e(asset('images/mood/santai.png')); ?>" alt="Santai mood illustration" class="mood-card__image w-full h-full object-cover" onerror="this.style.display='none'">
         <div class="art-glass-panel"></div>
         <div class="art-pond"></div>
         <div class="art-stone art-stone--one"></div>
         <div class="art-stone art-stone--two"></div>
         <div class="art-stream"></div>
       </div>
-      <div>
-        <div class="mood-card__label">Santai</div>
+      <div class="py-4 text-center bg-slate-900 border-t border-sky-500">
+        <div class="mood-card__label text-xl font-bold text-white">Santai</div>
       </div>
     </button>
 
-    <!-- Lelah Card -->
-    <button class="mood-card mood-card--lelah" data-mood="lelah" data-bg="radial-gradient(circle at top, rgba(237,233,254,0.55), transparent 55%)" data-border="#8b5cf6" data-text="#111827" aria-pressed="false">
-      <div class="mood-card__art mood-card__art--lelah">
-        <!-- Image: user dapat upload ke public/images/mood/lelah.png -->
-        <img src="<?php echo e(asset('images/mood/lelah.png')); ?>" alt="Lelah mood illustration" class="mood-card__image" onerror="this.style.display='none'">
-        <!-- Fallback CSS art jika image tidak ada -->
+    <button class="mood-card mood-card--lelah relative rounded-2xl overflow-hidden transition-transform hover:scale-105" data-mood="lelah" data-bg="radial-gradient(circle at top, rgba(237,233,254,0.55), transparent 55%)" data-border="#8b5cf6" data-text="#111827" aria-pressed="false">
+      <div class="mood-card__art mood-card__art--lelah w-full">
+        <img src="<?php echo e(asset('images/mood/lelah.png')); ?>" alt="Lelah mood illustration" class="mood-card__image w-full h-full object-cover" onerror="this.style.display='none'">
         <div class="art-glass-panel"></div>
         <div class="art-sofa"></div>
         <div class="art-pillows"></div>
@@ -65,19 +57,18 @@
           <span>Z</span><span>z</span>
         </div>
       </div>
-      <div>
-        <div class="mood-card__label">Lelah</div>
+      <div class="py-4 text-center bg-slate-900 border-t border-purple-500">
+        <div class="mood-card__label text-xl font-bold text-white">Lelah</div>
       </div>
     </button>
   </section>
 
-  <div class="mood-actions">
-    <button type="button" class="btn btn--primary" id="confirmMood">Pilih Mood</button>
+  <div class="mood-actions flex justify-center mt-8 pb-12">
+    <button type="button" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-colors" id="confirmMood">Pilih Mood</button>
   </div>
 
 </div>
 
 <script src="<?php echo e(asset('js/mood-selection.js')); ?>" defer></script>
 <?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\kuliah\WEMVI\Semester 4\Multimedia Pembelajaran Interaktif\Project\mood-sync\resources\views/mood_selection.blade.php ENDPATH**/ ?>
