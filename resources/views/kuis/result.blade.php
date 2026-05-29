@@ -39,7 +39,7 @@
     }
 @endphp
 
-<div class="bg-slate-950 min-h-screen py-8 md:py-12">
+<div class="min-h-screen py-8 md:py-12">
     <div class="container max-w-4xl mx-auto px-4 md:px-8 text-slate-100">
         <div class="space-y-8 md:space-y-12">
             <div class="bg-slate-900/80 border border-white/10 rounded-3xl p-8 md:p-12 text-center shadow-2xl">
@@ -53,7 +53,7 @@
                     {{ $message }}
                 </p>
 
-                <div class="bg-slate-950/60 border border-white/10 rounded-2xl p-8 mb-8">
+                <div class="glass-card border border-white/10 rounded-2xl p-8 mb-8">
                     <p class="text-slate-400 text-sm uppercase tracking-wider mb-4">Skor Anda</p>
                     <div class="flex items-end justify-center gap-2 mb-8">
                         <span class="text-6xl md:text-7xl font-black text-white">{{ $score }}</span>
@@ -107,11 +107,11 @@
                             </div>
                             <p class="text-slate-100 font-semibold mb-3">{{ $detail['pertanyaan'] }}</p>
                             <div class="grid gap-3 sm:grid-cols-2">
-                                <div class="rounded-2xl border border-slate-700 bg-slate-950/80 p-4">
+                                <div class="rounded-2xl border border-slate-700 glass-card p-4">
                                     <p class="text-slate-400 text-xs uppercase tracking-wide mb-2">Jawabanmu</p>
                                     <p class="text-slate-100">{{ $detail['selected_label'] }}</p>
                                 </div>
-                                <div class="rounded-2xl border border-slate-700 bg-slate-950/80 p-4">
+                                <div class="rounded-2xl border border-slate-700 glass-card p-4">
                                     <p class="text-slate-400 text-xs uppercase tracking-wide mb-2">Jawaban yang benar</p>
                                     <p class="text-slate-100">{{ $detail['correct_label'] }}</p>
                                 </div>

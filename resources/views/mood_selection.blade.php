@@ -3,16 +3,11 @@
 @section('title', 'Pilih Mood Kamu Hari Ini')
 
 @section('content')
-<style>
-  /* Override parent container padding to allow full-width background */
-  .max-w-7xl.mx-auto { max-width: none; padding: 0; margin: 0; }
-  body > main { padding: 0; margin: 0; }
-</style>
 <link rel="stylesheet" href="{{ asset('css/mood-selection.css') }}">
 <div class="mood-page" role="main">
   <div class="mood-page__bg" aria-hidden="true"></div>
 
-  <header class="mood-header text-center mb-8">
+  <header class="mood-header glass-card bg-slate-900/40 border-slate-700/40 shadow-2xl p-8 md:p-10 text-center mb-8 mx-auto max-w-4xl">
     <p class="kicker text-blue-400 font-semibold tracking-wide">PILIH MOOD KAMU HARI INI</p>
     <h1 class="title text-4xl font-bold text-white mt-2">Pilih Mood Kamu Hari Ini</h1>
     <p class="subtitle text-gray-300 mt-3 max-w-2xl mx-auto">Pilih suasana belajar yang paling cocok untukmu hari ini. Setiap mood menghadirkan pengalaman pembelajaran adaptif dengan nuansa visual yang berbeda.</p>

@@ -9,7 +9,7 @@
     @endfor
 </div>
 
-<div class="min-h-screen bg-slate-950 py-10">
+<div class="min-h-screen py-10">
     <div class="container max-w-6xl mx-auto px-4">
         <div class="rounded-xl border border-white/10 bg-slate-900/80 p-4 shadow-md backdrop-blur-sm text-slate-100 mb-8">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-4">

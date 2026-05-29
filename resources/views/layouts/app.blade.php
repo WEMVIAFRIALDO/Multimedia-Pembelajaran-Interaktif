@@ -42,7 +42,7 @@
 <body class="mood-{{ strtolower(session('user_mood', 'biasa')) }} {{ $isDashboard ? 'dashboard-page' : '' }}">
     <!-- Debug badge removed: hidden in production UI -->
     <!-- Navigation Bar -->
-    <nav class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/95 border-b border-slate-800/50 shadow-sm">
+    <nav class="sticky top-0 z-50 backdrop-blur-xl bg-slate-900/70 border-b border-slate-800/50 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -66,7 +66,7 @@
                 <div class="flex items-center space-x-4">
                     <a href="{{ route('profil.index') }}" class="flex items-center gap-3 rounded-full border border-slate-700 bg-slate-900/90 px-3 py-2 text-sm text-slate-100 shadow-sm hover:border-blue-500/30 hover:text-white transition">
                         @if(Auth::user()->profile_photo_path)
-                            <img src="{{ asset('storage/' . Auth::user()->profile_photo_path) }}" alt="Avatar" class="h-9 w-9 rounded-full object-cover border border-slate-700">
+                            <img src="{{ filter_var(Auth::user()->profile_photo_path, FILTER_VALIDATE_URL) ? Auth::user()->profile_photo_path : asset('storage/' . Auth::user()->profile_photo_path) }}" alt="Avatar" class="h-9 w-9 rounded-full object-cover border border-slate-700">
                         @else
                             <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-white font-semibold">
                                 {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}

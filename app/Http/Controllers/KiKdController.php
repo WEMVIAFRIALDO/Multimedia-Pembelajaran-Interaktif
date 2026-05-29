@@ -21,12 +21,12 @@ class KiKdController extends Controller
             'RPL' => [
                 'mata_pelajaran' => 'Hardware',
                 'kompetensi_inti' => [
-                    'KI 3' => 'Memahami, menerapkan, dan menganalisis pengetahuan faktual, konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.',
-                    'KI 4' => 'Mengolah, menalar, dan menyaji dalam ranah konkret dan ranah abstrak terkait dengan pengembangan dari yang dipelajarinya di sekolah secara mandiri, bertindak secara efektif dan kreatif, serta mampu menggunakan metode sesuai kaidah keilmuan.',
+                    'CP 3' => 'Memahami, menerapkan, dan menganalisis pengetahuan faktual, konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.',
+                    'TP 4' => 'Mengolah, menalar, dan menyaji dalam ranah konkret dan ranah abstrak terkait dengan pengembangan dari yang dipelajarinya di sekolah secara mandiri, bertindak secara efektif dan kreatif, serta mampu menggunakan metode sesuai kaidah keilmuan.',
                 ],
                 'kompetensi_dasar' => [
                     [
-                        'kode' => 'KD 3.4',
+                        'kode' => 'CP&TP 3.4',
                         'deskripsi' => 'Menganalisis jaringan komputer',
                         'detail' => [
                             'Memahami topologi jaringan (star, ring, bus, mesh)',
@@ -37,7 +37,7 @@ class KiKdController extends Controller
                         'slug' => 'kelas-12-rpl-hardware-komponen', // Untuk tracking progress
                     ],
                     [
-                        'kode' => 'KD 3.5',
+                        'kode' => 'CP&TP 3.5',
                         'deskripsi' => 'Menyusun algoritma',
                         'detail' => [
                             'Memahami dasar-dasar algoritma',
@@ -52,12 +52,12 @@ class KiKdController extends Controller
             'Multimedia' => [
                 'mata_pelajaran' => 'Grafika Komputer',
                 'kompetensi_inti' => [
-                    'KI 3' => 'Memahami, menerapkan, dan menganalisis pengetahuan faktual, konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.',
-                    'KI 4' => 'Mengolah, menalar, dan menyaji dalam ranah konkret dan ranah abstrak terkait dengan pengembangan dari yang dipelajarinya di sekolah secara mandiri, bertindak secara efektif dan kreatif, serta mampu menggunakan metode sesuai kaidah keilmuan.',
+                    'CP 3' => 'Memahami, menerapkan, dan menganalisis pengetahuan faktual, konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.',
+                    'TP 4' => 'Mengolah, menalar, dan menyaji dalam ranah konkret dan ranah abstrak terkait dengan pengembangan dari yang dipelajarinya di sekolah secara mandiri, bertindak secara efektif dan kreatif, serta mampu menggunakan metode sesuai kaidah keilmuan.',
                 ],
                 'kompetensi_dasar' => [
                     [
-                        'kode' => 'KD 3.1',
+                        'kode' => 'CP&TP 3.1',
                         'deskripsi' => 'Transformasi 2D (Translasi, Rotasi, Scaling)',
                         'detail' => [
                             'Memahami konsep transformasi geometri 2D',
@@ -69,7 +69,7 @@ class KiKdController extends Controller
                         'slug' => 'kelas-11-multimedia-grafika-transformasi-2d',
                     ],
                     [
-                        'kode' => 'KD 3.2',
+                        'kode' => 'CP&TP 3.2',
                         'deskripsi' => 'Teknik Rendering dan Lighting',
                         'detail' => [
                             'Memahami model pencahayaan (Phong, Lambert)',

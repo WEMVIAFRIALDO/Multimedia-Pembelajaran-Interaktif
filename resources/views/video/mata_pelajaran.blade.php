@@ -3,7 +3,7 @@
 @section('title', 'Pilih Mata Pelajaran - Video ' . $jurusan . ' Kelas ' . $kelas)
 
 @section('content')
-<div class="min-h-screen bg-slate-950 py-10">
+<div class="min-h-screen py-10">
     <div class="container-fluid px-4">
         <div class="row">
             <div class="col-12">

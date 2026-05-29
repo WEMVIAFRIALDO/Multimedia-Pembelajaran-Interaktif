@@ -37,11 +37,11 @@ class ProfileController extends Controller
         $user->email = $request->email;
 
         if ($request->hasFile('photo')) {
-            if ($user->profile_photo_path && Storage::disk('public')->exists($user->profile_photo_path)) {
+            if ($user->profile_photo_path && !filter_var($user->profile_photo_path, FILTER_VALIDATE_URL) && Storage::disk('public')->exists($user->profile_photo_path)) {
                 Storage::disk('public')->delete($user->profile_photo_path);
             }
 
-            $user->profile_photo_path = $request->file('photo')->store('profile_photos', 'public');
+            $user->profile_photo_path = $request->file('photo')->storeOnCloudinary('profile_pictures')->getSecurePath();
         }
 
         if ($request->password) {

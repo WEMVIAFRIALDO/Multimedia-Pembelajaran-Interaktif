@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-screen bg-slate-950 py-10">
+<div class="min-h-screen py-10">
     <div class="container max-w-3xl mx-auto px-4">
         <div class="bg-slate-900/95 border border-slate-800 rounded-3xl shadow-2xl p-8">
             <div class="grid gap-8 lg:grid-cols-[320px_1fr] mb-8">
                 <div class="space-y-6">
-                    <div class="rounded-3xl bg-slate-950/80 border border-slate-800 p-6 shadow-lg shadow-slate-900/50">
+                    <div class="rounded-3xl border border-slate-800 glass-card p-6 shadow-lg shadow-slate-900/50">
                         <div class="mx-auto h-28 w-28 rounded-3xl overflow-hidden bg-slate-800 flex items-center justify-center mb-5">
                             @if($user->profile_photo_path)
                                 <button id="profilePhotoPreviewTrigger" type="button" class="h-full w-full overflow-hidden focus:outline-none" aria-label="Lihat foto profil">
-                                    <img src="{{ asset('storage/' . $user->profile_photo_path) }}" alt="Foto Profil" class="h-full w-full object-cover transition-transform duration-200 hover:scale-105 cursor-pointer">
+                                    <img src="{{ filter_var($user->profile_photo_path, FILTER_VALIDATE_URL) ? $user->profile_photo_path : asset('storage/' . $user->profile_photo_path) }}" alt="Foto Profil" class="h-full w-full object-cover transition-transform duration-200 hover:scale-105 cursor-pointer">
                                 </button>
                             @else
                                 <span class="text-4xl text-slate-200">{{ strtoupper(substr($user->name, 0, 1)) }}</span>
@@ -26,7 +26,7 @@
                         </div>
                     </div>
 
-                    <div class="rounded-3xl bg-slate-950/80 border border-slate-800 p-6 shadow-lg shadow-slate-900/50">
+                    <div class="rounded-3xl border border-slate-800 glass-card p-6 shadow-lg shadow-slate-900/50">
                         <h3 class="text-lg font-semibold text-white mb-4">Saran</h3>
                         <ul class="space-y-3 text-sm text-slate-400">
                             <li>1. Gunakan foto profil yang jelas dan mudah dikenali.</li>
@@ -59,17 +59,17 @@
                         <div class="grid gap-6">
                             <div>
                                 <label for="photo" class="block text-sm font-semibold text-slate-200 mb-2">Foto Profil</label>
-                                <input type="file" id="photo" name="photo" accept="image/png, image/jpeg, image/webp" class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                <input type="file" id="photo" name="photo" accept="image/png, image/jpeg, image/webp" class="w-full rounded-2xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
                                 @error('photo')<p class="mt-2 text-sm text-rose-400">{{ $message }}</p>@enderror
                             </div>
                             <div>
                                 <label for="name" class="block text-sm font-semibold text-slate-200 mb-2">Nama</label>
-                                <input type="text" class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" id="name" name="name" value="{{ old('name', $user->name) }}" required>
+                                <input type="text" class="w-full rounded-2xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" id="name" name="name" value="{{ old('name', $user->name) }}" required>
                                 @error('name')<p class="mt-2 text-sm text-rose-400">{{ $message }}</p>@enderror
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-semibold text-slate-200 mb-2">Email</label>
-                                <input type="email" class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" id="email" name="email" value="{{ old('email', $user->email) }}" required>
+                                <input type="email" class="w-full rounded-2xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" id="email" name="email" value="{{ old('email', $user->email) }}" required>
                                 @error('email')<p class="mt-2 text-sm text-rose-400">{{ $message }}</p>@enderror
                             </div>
                         </div>
@@ -84,10 +84,10 @@
     </div>
 
     @if($user->profile_photo_path)
-        <div id="photoPreviewModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 p-4">
+        <div id="photoPreviewModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/80 p-4">
             <div class="relative max-w-4xl w-full rounded-3xl overflow-hidden bg-slate-900 shadow-2xl border border-slate-800">
-                <button id="photoPreviewClose" type="button" class="absolute right-4 top-4 z-10 rounded-full bg-slate-950/90 px-3 py-2 text-sm font-semibold text-white border border-slate-700 hover:bg-slate-900 transition">Tutup</button>
-                <img src="{{ asset('storage/' . $user->profile_photo_path) }}" alt="Preview Foto Profil" class="max-h-[80vh] w-full object-contain bg-slate-950">
+                <button id="photoPreviewClose" type="button" class="absolute right-4 top-4 z-10 rounded-full bg-slate-900/90 px-3 py-2 text-sm font-semibold text-white border border-slate-700 hover:bg-slate-800 transition">Tutup</button>
+                <img src="{{ filter_var($user->profile_photo_path, FILTER_VALIDATE_URL) ? $user->profile_photo_path : asset('storage/' . $user->profile_photo_path) }}" alt="Preview Foto Profil" class="max-h-[80vh] w-full object-contain">
             </div>
         </div>
     @endif

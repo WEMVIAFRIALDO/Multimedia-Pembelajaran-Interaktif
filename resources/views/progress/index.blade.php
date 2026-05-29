@@ -3,9 +3,9 @@
 @section('title', 'Progress - Mood-Sync')
 
 @section('content')
-<div class="min-h-screen bg-slate-950 py-8 md:py-12">
+<div class="min-h-screen py-8 md:py-12">
     <div class="container max-w-6xl mx-auto px-4 md:px-8">
-        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between mb-8">
+        <div class="mb-8 md:mb-12 glass-card bg-slate-900/40 border-slate-700/40 shadow-2xl p-8 md:p-10">
             <div>
                 <p class="text-amber-400 text-sm font-semibold uppercase tracking-wide mb-2">📈 Tracking Belajar</p>
                 <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">Progress Pembelajaran Anda</h1>
@@ -18,12 +18,12 @@
 
         <div class="grid gap-6 lg:grid-cols-3 mb-8">
             <div class="rounded-3xl border border-slate-800 bg-slate-900/95 p-6 shadow-2xl">
-                <p class="text-sm uppercase tracking-[0.24em] text-slate-400 mb-3">Kompetensi Dasar Selesai</p>
+                <p class="text-sm uppercase tracking-[0.24em] text-slate-300 mb-3">CP & TP Selesai</p>
                 <h2 class="text-3xl font-bold text-white mb-2">{{ $progressPercentage }}%</h2>
                 <div class="h-3 overflow-hidden rounded-full bg-slate-800 mb-4">
                     <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-blue-500" style="width: {{ $progressPercentage }}%"></div>
                 </div>
-                <p class="text-slate-400 text-sm">Anda telah menyelesaikan <span class="font-semibold text-white">{{ $completedMateri }} dari {{ $totalMateri }}</span> kompetensi dasar.</p>
+                <p class="text-slate-300 text-sm">Anda telah menyelesaikan <span class="font-semibold text-white">{{ $completedMateri }} dari {{ $totalMateri }}</span> CP & TP.</p>
             </div>
             <div class="rounded-3xl border border-slate-800 bg-slate-900/95 p-6 shadow-2xl flex items-center gap-4">
                 <div class="text-4xl">📚</div>
@@ -51,7 +51,7 @@
         <div class="rounded-3xl border border-slate-800 bg-slate-900/95 p-6 shadow-2xl mb-8">
             <h3 class="text-2xl font-bold text-white mb-4">📋 Ringkasan Progress</h3>
             @if($progresses->isEmpty())
-                <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-10 text-center">
+                <div class="rounded-3xl border border-slate-800 glass-card p-10 text-center">
                     <div class="text-5xl mb-4">📭</div>
                     <p class="text-slate-400 mb-6">Belum ada progress yang tercatat. Ayo mulai pelajari materi dan kerjakan kuismu!</p>
                     <a href="{{ route('materi.index') }}" class="inline-flex items-center justify-center rounded-2xl bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-300">
@@ -61,7 +61,7 @@
             @else
                 <div class="space-y-4 max-h-[28rem] overflow-y-auto pr-1">
                     @foreach($progresses as $progress)
-                        <div class="rounded-3xl border border-slate-800 bg-slate-950/80 p-5 hover:border-slate-700 transition">
+                        <div class="rounded-3xl border border-slate-800 glass-card p-5 hover:border-slate-700 transition">
                             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                 <div>
                                     <h4 class="text-lg font-semibold text-white mb-2">{{ $progress->materi?->judul ?? ($progress->material?->judul ?? 'Materi Tidak Diketahui') }}</h4>

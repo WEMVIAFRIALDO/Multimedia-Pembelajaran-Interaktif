@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-slate-950 min-h-screen py-8 md:py-12">
+<div class="min-h-screen py-8 md:py-12">
     <div class="container max-w-4xl mx-auto px-4 md:px-8 text-slate-100">
         <!-- Header dengan Progress -->
         <div class="mb-8">
@@ -55,7 +55,7 @@
                                     for="q{{ $index }}{{ $key }}"
                                     class="flex items-center cursor-pointer p-4 border-2 border-slate-700 rounded-xl transition-all duration-200 peer-checked:border-amber-400 peer-checked:bg-amber-400/10 hover:border-slate-500 group">
                                     <div class="flex items-center justify-center w-6 h-6 border-2 border-slate-600 rounded-full group-hover:border-amber-400 peer-checked:border-amber-400 peer-checked:bg-amber-400 transition-all">
-                                        <div class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></div>
+                                        <div class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100 peer-checked:bg-white inner-dot"></div>
                                     </div>
                                     <span class="ml-4 text-slate-200 font-medium group-hover:text-white transition-colors">
                                         {{ chr(65 + $key) }}. {{ $pilihan }}
@@ -170,6 +170,11 @@
     input[type="radio"]:checked + label {
         border-color: rgb(251, 146, 60);
         background-color: rgba(251, 146, 60, 0.1);
+    }
+
+    input[type="radio"]:checked + label .inner-dot {
+        opacity: 1 !important;
+        background-color: #ffffff !important;
     }
 </style>
 

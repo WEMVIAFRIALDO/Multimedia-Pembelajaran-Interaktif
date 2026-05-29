@@ -3,12 +3,12 @@
 @section('title', 'CP & TP - Capaian dan Tujuan Pembelajaran')
 
 @section('content')
-<div class="min-h-screen bg-slate-950 py-10">
+<div class="min-h-screen py-10">
     <div class="container max-w-6xl mx-auto px-4">
         <div class="rounded-3xl border border-slate-800 bg-slate-900/95 shadow-2xl overflow-hidden">
             <div class="p-8 border-b border-slate-800">
                 <h2 class="text-3xl font-bold text-white"><i class="fas fa-book"></i> CP & TP Kurikulum Merdeka</h2>
-                <p class="text-slate-400 mt-2">Capaian Pembelajaran dan Tujuan Pembelajaran Kurikulum Merdeka</p>
+                <p class="text-slate-100 mt-2">Capaian Pembelajaran dan Tujuan Pembelajaran Kurikulum Merdeka</p>
             </div>
             <div class="p-6">
                 <ul class="nav nav-tabs border-b border-slate-800 mb-6" role="tablist">
@@ -31,8 +31,8 @@
                         @endphp
                         <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="{{ $jurusanSlug }}-content" role="tabpanel" aria-labelledby="{{ $jurusanSlug }}-tab">
                             <div class="grid gap-6">
-                                <div class="rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
-                                    <h4 class="text-xl font-semibold text-white mb-4"><i class="fas fa-star"></i> Kompetensi Inti (KI)</h4>
+                                <div class="rounded-3xl border border-slate-800 glass-card p-6">
+                                    <h4 class="text-xl font-semibold text-white mb-4"><i class="fas fa-star"></i> CP & TP</h4>
                                     <div class="accordion kikd-accordion" id="accordion-ki-{{ $jurusanSlug }}">
                                         @foreach($data['kompetensi_inti'] as $ki => $deskripsi)
                                             @php
@@ -42,11 +42,11 @@
                                                 <h2 class="accordion-header" id="heading-{{ $collapseId }}">
                                                     <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }} bg-slate-900/90 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}" aria-expanded="{{ $loop->first ? 'true' : 'false' }}" aria-controls="{{ $collapseId }}">
                                                         <span class="ki-badge">{{ $ki }}</span>
-                                                        <span class="ki-title">Kompetensi Inti {{ str_replace('KI ', '', $ki) }}</span>
+                                                        <span class="ki-title">{{ strpos($ki, 'TP') === 0 ? 'Tujuan Pembelajaran' : 'Capaian Pembelajaran' }} {{ trim(str_replace(['CP', 'TP'], '', $ki)) }}</span>
                                                     </button>
                                                 </h2>
                                                 <div id="{{ $collapseId }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}" data-bs-parent="#accordion-ki-{{ $jurusanSlug }}">
-                                                    <div class="accordion-body rounded-b-3xl bg-slate-950/90 text-slate-300">
+                                                    <div class="accordion-body rounded-b-3xl glass-card text-slate-100">
                                                         <p class="ki-text">{{ $deskripsi }}</p>
                                                     </div>
                                                 </div>
@@ -55,8 +55,8 @@
                                     </div>
                                 </div>
 
-                                <div class="rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
-                                    <h4 class="text-xl font-semibold text-white mb-4"><i class="fas fa-bullseye"></i> Kompetensi Dasar (KD)</h4>
+                                <div class="rounded-3xl border border-slate-800 glass-card p-6">
+                                    <h4 class="text-xl font-semibold text-white mb-4"><i class="fas fa-bullseye"></i> CP & TP</h4>
                                     <div class="accordion kikd-accordion" id="accordion-kd-{{ $jurusanSlug }}">
                                         @foreach($data['kompetensi_dasar'] as $kd)
                                             @php
@@ -79,10 +79,10 @@
                                                     </button>
                                                 </h2>
                                                 <div id="{{ $collapseId }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}" data-bs-parent="#accordion-kd-{{ $jurusanSlug }}">
-                                                    <div class="accordion-body rounded-b-3xl bg-slate-950/90 text-slate-300">
+                                                    <div class="accordion-body rounded-b-3xl glass-card text-slate-100">
                                                         <p class="kd-description">{{ $kd['deskripsi'] }}</p>
                                                         <h6 class="kd-detail-title">Materi Pembelajaran:</h6>
-                                                        <ul class="kd-detail-list list-disc pl-5 mt-2 text-slate-300">
+                                                        <ul class="kd-detail-list list-disc pl-5 mt-2 text-slate-100">
                                                             @forelse($kd['detail'] as $detail)
                                                                 <li>{{ $detail }}</li>
                                                             @empty
@@ -96,7 +96,7 @@
                                                                         <i class="fas fa-check"></i> Sudah Ditandai Selesai
                                                                     </span>
                                                                 @else
-                                                                    <span class="badge bg-slate-700 text-slate-200 border border-slate-600/40">
+                                                                    <span class="badge bg-slate-700 text-white border border-slate-600/40">
                                                                         <i class="fas fa-clock"></i> Belum Ditandai Selesai
                                                                     </span>
                                                                 @endif
@@ -113,9 +113,9 @@
                     @endforeach
                 </div>
 
-                <div class="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 mt-6">
+                <div class="rounded-3xl border border-slate-800 glass-card p-6 mt-6">
                     <h5 class="text-lg font-semibold text-white mb-3"><i class="fas fa-info-circle"></i> Informasi Penting</h5>
-                    <p class="text-slate-400">Halaman ini menampilkan Kompetensi Inti (KI) dan Kompetensi Dasar (KD) sesuai dengan Kurikulum Merdeka. Status progress diperbarui secara otomatis ketika Anda menyelesaikan pembelajaran materi terkait.</p>
+                    <p class="text-slate-300">Halaman ini menampilkan CP & TP (Capaian Pembelajaran dan Tujuan Pembelajaran) sesuai dengan Kurikulum Merdeka. Status progress diperbarui secara otomatis ketika Anda menyelesaikan pembelajaran materi terkait.</p>
                 </div>
             </div>
         </div>

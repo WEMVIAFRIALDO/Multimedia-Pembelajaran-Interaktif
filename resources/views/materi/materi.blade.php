@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-screen bg-slate-950 py-10">
+<div class="min-h-screen py-10">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-12">
