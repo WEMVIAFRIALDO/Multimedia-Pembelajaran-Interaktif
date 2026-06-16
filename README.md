@@ -44,3 +44,16 @@ Website Laravel untuk sistem pembelajaran interaktif yang menyesuaikan dengan mo
 2. Pilih mood untuk pengalaman personal
 3. Jelajahi materi dan ikuti kuis
 4. Lihat progress di dashboard
+
+# Mood-Sync
+
+Mood-Sync adalah platform multimedia pembelajaran interaktif berbasis web yang dirancang untuk memberikan pengalaman belajar yang adaptif dan personal. Sistem ini memiliki pendekatan unik dengan menyesuaikan penyajian konten edukasi berdasarkan kondisi emosional siswa.
+
+Proyek ini dikembangkan sebagai bagian dari pemenuhan tugas mata kuliah Multimedia Pembelajaran Interaktif.
+
+## Fitur Utama
+- **Emotion-Based Content Adaptation:** Sistem merespons kondisi emosional siswa untuk memberikan materi dengan cara yang paling efektif saat itu.
+- **Interactive & Modern UI:** Antarmuka pengguna dirancang secara dinamis untuk memaksimalkan keterlibatan siswa selama proses pembelajaran.
+
+## Pengembang
+**Wemvi Afrialdo**
